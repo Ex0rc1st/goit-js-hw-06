@@ -31,7 +31,6 @@ button {
 }
 
 img {
-  display: grid;
   width: 500px;
   padding: 10px;
 }

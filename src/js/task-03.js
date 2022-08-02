@@ -15,13 +15,17 @@ const images = [
 
 const galleryRef = document.querySelector('.gallery');
 
-const list = [];
+const makeListItem = ({ url, alt }) => {
+  return `
+  <li>
+    <img src = ${url} alt = ${alt}>
+  </li>
+  `
+}
 
-images.forEach(image => {
-  const imgRef = document.createElement('img');
-  imgRef.src = image.url;
-  imgRef.alt = image.alt;
-  list.push(imgRef);
-});
+const makeListOfImages = images.map(makeListItem).join('');
+galleryRef.insertAdjacentHTML('afterbegin', makeListOfImages);
 
-galleryRef.append(...list);
+console.log(makeListOfImages);
+
+
