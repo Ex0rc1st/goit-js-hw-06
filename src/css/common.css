@@ -22,3 +22,16 @@ button {
   padding: 8px 12px;
   cursor: pointer;
 }
+
+.gallery {
+  display: grid;
+  grid-template-rows: 1fr;
+  justify-content: space-around;
+  
+}
+
+img {
+  display: grid;
+  width: 500px;
+  padding: 10px;
+}
