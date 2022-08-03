@@ -13,19 +13,17 @@ const images = [
   },
 ];
 
-const galleryRef = document.querySelector('.gallery');
+const listRef = document.querySelector('.gallery')
 
-const makeListItem = ({ url, alt }) => {
-  return `
-  <li>
-    <img src = ${url} alt = ${alt}>
-  </li>
-  `
-}
+const markup = images
+  .map(image => `<li><img class="picture" src=${image.url} width = '400' alt='${image.alt}'></img></li>`)
+  .join('')
 
-const makeListOfImages = images.map(makeListItem).join('');
-galleryRef.insertAdjacentHTML('afterbegin', makeListOfImages);
+listRef.insertAdjacentHTML('beforeend', markup) 
 
-console.log(makeListOfImages);
+listRef.style.display = 'flex';
+listRef.style.listStyle = 'none';
+listRef.style.gap = '20px';
+listRef.style.justifyContent = 'center';
 
 
